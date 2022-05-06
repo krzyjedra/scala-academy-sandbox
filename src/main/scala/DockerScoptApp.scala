@@ -1,5 +1,5 @@
 object DockerScoptApp extends App {
-  case class Config(lines: Int, words: String = "DEFAULT")
+  case class Config(lines: Int = 2, words: String = "DEFAULT")
 
   import scopt.OParser
 
@@ -8,7 +8,7 @@ object DockerScoptApp extends App {
     import myBuilder._
     OParser.sequence(
       programName("Krzysiek"),
-      head("Blabla", "1.0.0-alpha"),
+      head("Title", "1.0.0-alpha"),
       help("help").text("R u looking for help?"),
       opt[Int]('l', "lines")
         .action((x, cfg) => cfg.copy(lines = x))
@@ -19,7 +19,7 @@ object DockerScoptApp extends App {
   val config = OParser.parse(
     myParser,
     args,
-    Config(lines = 2)).getOrElse {
+    Config(lines = 5, words = "dasd")).getOrElse {
     println("Not enough or incorrect command-line arguments. Exiting...")
     sys.exit(-1)
   }
