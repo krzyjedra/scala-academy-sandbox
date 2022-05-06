@@ -19,7 +19,7 @@ object DockerScoptApp extends App {
   val config = OParser.parse(
     myParser,
     args,
-    Config(lines = 5, words = "DEFAULT")).getOrElse {
+    Config(lines = 2, words = "DEFAULT")).getOrElse {
     println("Not enough or incorrect command-line arguments. Exiting...")
     sys.exit(-1)
   }
