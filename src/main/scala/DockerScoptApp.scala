@@ -24,5 +24,5 @@ object DockerScoptApp extends App {
     sys.exit(-1)
   }
 
-  println(s"${config.lines} --> ${config.words}")
+  println(s"${config.lines} ---> ${config.words}")
 }
